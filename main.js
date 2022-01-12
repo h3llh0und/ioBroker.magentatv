@@ -166,7 +166,9 @@ class Magentatv extends utils.Adapter {
             });
 
             req.on('end', async function () {
+                self.log.debug('Received Message: ' + body);
                 if (body.indexOf('X-pairingCheck:') >= 0) {
+                    self.log.debug('Receiver connected');
                     self.connected = true;
                     self.pairingCode = body.substring(body.indexOf('X-pairingCheck:') + 'X-pairingCheck:'.length, body.indexOf('</messageBody>'));
                     self.verificationCode = crypto.createHash('md5').update(self.pairingCode + self.config.terminalId + self.config.userID).digest('hex').toUpperCase();
@@ -230,7 +232,7 @@ class Magentatv extends utils.Adapter {
         });
 
         app.listen(this.config.localPort, this.config.localIP, () => {
-
+            self.log.debug('Callback Server started');
         });
     }
 
