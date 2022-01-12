@@ -15,6 +15,22 @@
 
 Control your MagentaTv receiver
 
+## Usage
+
+![image](https://user-images.githubusercontent.com/6917818/149179561-b3116216-b7cb-40bc-905f-53978fb24bf7.png)
+MagentaTv Receiver Adress is needed and the Telekom UserId(see below). Rest is filled in automatic.
+
+![image](https://user-images.githubusercontent.com/6917818/149181874-901754b3-4ffe-4fc6-945a-d96230cf809e.png)
+Current and Next Event gives Information about the current and next Program.
+
+Channel is the current channel.
+
+Playmode should show in what mode the receiver is. Stop means off und the rest is on. This state is not really updated by receiver.(Try to work on that :D)
+
+Under Keys there are all(hope i didnt forget any) Keys from the Remote Control.
+
+You can do the same with this Adapter as with the remote Control.
+
 
 ## How to obtain Telekom UserID
 
@@ -37,6 +53,8 @@ Left fill in userID and on right side you see your ID needed. After that you jus
 Automatic getting UserID
 
 Show Device Connection
+
+Autodetecting Receivers
 
 ## Changelog
 <!--
