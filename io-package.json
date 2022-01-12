@@ -1,0 +1,112 @@
+{
+    "common": {
+        "name": "magentatv",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "MagentaTv",
+        "titleLang": {
+            "en": "MagentaTv",
+            "de": "MagentaTv",
+            "ru": "MagentaTv",
+            "pt": "MagentaTv",
+            "nl": "MagentaTv",
+            "fr": "MagentaTv",
+            "it": "MagentaTv",
+            "es": "MagentaTv",
+            "pl": "MagentaTv",
+            "zh-cn": "MagentaTv"
+        },
+        "desc": {
+            "en": "Control your MagentaTv receiver",
+            "de": "Control your MagentaTv receiver",
+            "ru": "Control your MagentaTv receiver",
+            "pt": "Control your MagentaTv receiver",
+            "nl": "Control your MagentaTv receiver",
+            "fr": "Control your MagentaTv receiver",
+            "it": "Control your MagentaTv receiver",
+            "es": "Control your MagentaTv receiver",
+            "pl": "Control your MagentaTv receiver",
+            "zh-cn": "Control your MagentaTv receiver"
+        },
+        "authors": [
+            "h3llh0und <h3llh0und0815@gmail.com>"
+        ],
+        "keywords": [
+            "Telekom",
+            "MagentaTv",
+            "Magenta"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "magentatv.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/h3llh0und/ioBroker.magentatv/main/admin/magentatv.png",
+        "readme": "https://github.com/h3llh0und/ioBroker.magentatv/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "multimedia",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
+    },
+    "native": {
+		"remoteIP": "",
+		"remotePort": 8081,
+		"username": "",
+		"password": "",
+		"userID": "",
+		"localIP": "",
+		"localPort": 48124,
+		"terminalId": ""
+	},
+	"protectedNative": [
+		"password"
+	],
+	"encryptedNative": [
+		"password"
+	],
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "cli": true,
+    "target": "directory",
+    "adapterName": "magentatv",
+    "title": "MagentaTv",
+    "description": "Control your MagentaTv receiver",
+    "keywords": [
+        "Telekom",
+        "MagentaTv",
+        "Magenta"
+    ],
+    "expert": "yes",
+    "features": [
+        "adapter"
+    ],
+    "adminFeatures": [],
+    "type": "multimedia",
+    "startMode": "daemon",
+    "connectionType": "local",
+    "dataSource": "poll",
+    "connectionIndicator": "yes",
+    "language": "JavaScript",
+    "adminReact": "no",
+    "tools": [
+        "ESLint",
+        "type checking"
+    ],
+    "releaseScript": "yes",
+    "devServer": "yes",
+    "devServerPort": 8088,
+    "indentation": "Space (4)",
+    "quotes": "single",
+    "es6class": "yes",
+    "authorName": "h3llh0und",
+    "authorGithub": "h3llh0und",
+    "authorEmail": "h3llh0und0815@gmail.com",
+    "gitRemoteProtocol": "HTTPS",
+    "gitCommit": "yes",
+    "defaultBranch": "main",
+    "license": "MIT License",
+    "dependabot": "yes",
+    "creatorVersion": "2.0.2"
+}
