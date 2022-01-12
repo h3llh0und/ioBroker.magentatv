@@ -70,7 +70,7 @@ class Magentatv extends utils.Adapter {
         }
 
         for (const [key] of Object.entries(keyCodes)) {
-            await this.setObjectNotExistsAsync('keys.' + key, {
+            await this.setObjectNotExistsAsync('Keys.' + key, {
                 type: 'state',
                 common: {
                     name: key,
@@ -200,7 +200,7 @@ class Magentatv extends utils.Adapter {
                             stbEvent = xmlHelper.substringBetween(xml, '<STB_EitChanged>', '</STB_EitChanged>');
                         }
                         else {
-                            self.log.debug("Unknown Event: " + xml);
+                            self.log.debug('Unknown Event: ' + xml);
                         }
                         if(stbEvent !== null) {
                             const json = JSON.parse(stbEvent);
@@ -220,7 +220,7 @@ class Magentatv extends utils.Adapter {
                         }
                     }
                     else {
-                        self.log.debug("Unknown Body: " + body);
+                        self.log.debug('Unknown Body: ' + body);
                     }
 
                 }
