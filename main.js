@@ -230,7 +230,7 @@ class Magentatv extends utils.Adapter {
         });
 
         app.listen(this.config.localPort, this.config.localIP, () => {
-            self.log.debug('Callback URL http://${this.config.localIP}:${this.config.localPort}');
+
         });
     }
 
