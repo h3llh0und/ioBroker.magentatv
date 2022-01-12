@@ -56,6 +56,8 @@ Show Device Connection
 
 Autodetecting Receivers
 
+Code Optimization
+
 ## Changelog
 <!--
     Placeholder for the next version (at the beginning of the line):
