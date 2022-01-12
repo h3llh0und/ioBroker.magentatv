@@ -147,7 +147,7 @@ class Magentatv extends utils.Adapter {
         await this.setStateAsync('Playmode', 0, true);
 
         // In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
-        this.subscribeStates('keys.*');
+        this.subscribeStates('Keys.*');
 
         // You can also add a subscription for multiple states. The following line watches all states starting with "lights."
         // this.subscribeStates('lights.*');
@@ -263,7 +263,7 @@ class Magentatv extends utils.Adapter {
         const stateParts = id.split('.');
         const command = stateParts.pop();
         const parent = stateParts.pop();
-        if(parent === 'keys') {
+        if(parent === 'Keys') {
             //Dann ist es ein Button
             await this.SendKeyCode(keyCodes[command]);
         }
@@ -365,6 +365,8 @@ class Magentatv extends utils.Adapter {
             this.log.debug('Not Connected');
             return;
         }
+
+        this.log.debug('Sending Keycode: ' + keyCode);
 
         const soapBody ='<u:X_CTC_RemoteKey xmlns:u="urn:schemas-upnp-org:service:X-CTC_RemoteControl:1"><InstanceID>0</InstanceID><KeyCode>keyCode=' + keyCode + '^' + this.config.terminalId + ':' + this.verificationCode+ '^userID:' + this.config.userID + '</KeyCode></u:X_CTC_RemoteKey>';
         const soapXml = '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><s:Body>' + soapBody + '</s:Body></s:Envelope>';
