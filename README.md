@@ -34,6 +34,9 @@ Left fill in userID and on right side you see your ID needed. After that you jus
 
 ## Todos
 
+Automatic getting UserID
+
+Show Device Connection
 
 ## Changelog
 <!--
