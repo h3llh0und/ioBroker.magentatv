@@ -52,8 +52,6 @@ Left fill in userID and on right side you see your ID needed. After that you jus
 
 Automatic getting UserID
 
-Show Device Connection
-
 Autodetecting Receivers
 
 Code Optimization
