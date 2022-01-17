@@ -332,7 +332,6 @@ class Magentatv extends utils.Adapter {
     ConnectToReceiver()
     {
         this.connected = false;
-        this.setState('info.connection', {val: false, ack: true});
         let url = 'http://' + this.remoteHostnameAndPort;
         const msg = "SUBSCRIBE /upnp/service/X-CTC_RemotePairing/Event HTTP/1.1\r\nHOST: '" + this.remoteHostnameAndPort + "'\r\nCALLBACK: <http://" + this.localHostnameAndPort + '/magentatv/notify/>\r\nNT: upnp:event\r\nTIMEOUT: Second-300\r\nCONNECTION: close\r\n\r\n';
 
