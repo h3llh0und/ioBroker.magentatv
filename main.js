@@ -19,6 +19,7 @@ const keyCodes = require('./lib/keyCodes');
 const xmlHelper = require('./lib/xmlHelper');
 const Event = require('./lib/Event');
 const express = require('express');
+const GetUserId = require('./lib/GetUserId');
 
 class Magentatv extends utils.Adapter {
 
@@ -61,6 +62,7 @@ class Magentatv extends utils.Adapter {
             this.pairingCode = '';
             this.verificationCode = '';
             this.connected = false;
+            this.setState('info.connection', {val: false, ack: true});
             this.promise = null;
 
             this.StartServerExpress();
@@ -153,6 +155,8 @@ class Magentatv extends utils.Adapter {
         // this.subscribeStates('lights.*');
         // Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
         // this.subscribeStates('*');
+
+        //GetUserId('test', 'test');
     }
 
     StartServerExpress() {
@@ -170,6 +174,7 @@ class Magentatv extends utils.Adapter {
                 if (body.indexOf('X-pairingCheck:') >= 0) {
                     self.log.debug('Receiver connected');
                     self.connected = true;
+                    self.setState('info.connection', {val: true, ack: true});
                     self.pairingCode = body.substring(body.indexOf('X-pairingCheck:') + 'X-pairingCheck:'.length, body.indexOf('</messageBody>'));
                     self.verificationCode = crypto.createHash('md5').update(self.pairingCode + self.config.terminalId + self.config.userID).digest('hex').toUpperCase();
 
@@ -244,6 +249,7 @@ class Magentatv extends utils.Adapter {
         try {
             // @ts-ignore
             clearInterval(this.interval);
+            this.setState('info.connection', {val: false, ack: true});
             callback();
         } catch (e) {
             callback();
@@ -326,6 +332,7 @@ class Magentatv extends utils.Adapter {
     ConnectToReceiver()
     {
         this.connected = false;
+        this.setState('info.connection', {val: false, ack: true});
         let url = 'http://' + this.remoteHostnameAndPort;
         const msg = "SUBSCRIBE /upnp/service/X-CTC_RemotePairing/Event HTTP/1.1\r\nHOST: '" + this.remoteHostnameAndPort + "'\r\nCALLBACK: <http://" + this.localHostnameAndPort + '/magentatv/notify/>\r\nNT: upnp:event\r\nTIMEOUT: Second-300\r\nCONNECTION: close\r\n\r\n';
 
