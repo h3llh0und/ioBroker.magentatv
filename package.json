@@ -18,7 +18,7 @@
     "url": "https://github.com/h3llh0und/ioBroker.magentatv"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.5.1",
+    "@iobroker/adapter-core": "^2.6.7",
     "cheerio": "^1.0.0-rc.10",
     "express": "^4.17.2",
     "ip": "^1.1.5",
